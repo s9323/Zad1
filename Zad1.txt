@@ -1,0 +1,11 @@
+1)Jaki wzorzec projektowy zosta³ zaprezentowany na diagramie?
+->
+
+2)W jakich sytuacjach nale¿y u¿yæ tego wzorca?
+->
+
+3)W bazie chcemy przechowywaæ dane dotycz¹ce w³aœciciela oraz kawiarni którymi dysponuje. (1 w³aœciciel mo¿e posiadaæ kilka kawiarni) 
+Zaprojektuj i zaimplementuj model logiczny takiego problemu, oraz stwórz odpowiednie klasy s³u¿¹ce do wykonywania operacji CRUD 
+na bazie danych na serwerze HyperSQL.
+
+4)Zaimplementuj testy jednostkowe do napisanych klas.
