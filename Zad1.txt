@@ -1,11 +1,17 @@
-1)Jaki wzorzec projektowy zosta� zaprezentowany na diagramie?
-->
+1)Jaki wzorzec projektowy zosta� zaprezentowany na diagramie?
+->Dekorator
 
-2)W jakich sytuacjach nale�y u�y� tego wzorca?
+2)W jakich sytuacjach nale�y u�y� tego wzorca?
 ->
+Pozwala na dodanie nowej funkcjonalności do istniejących klas dynamicznie podczas działania programu.
+Wzorzec dekoratora polega na opakowaniu oryginalnej klasy w nową klasę "dekorującą". Zwykle przekazuje się oryginalny obiekt jako parametr konstruktora dekoratora, metody dekoratora wywołują metody oryginalnego obiektu i dodatkowo implementują nową funkcjonalność.
+Dekoratory są alternatywą dla dziedziczenia. Dziedziczenie rozszerza zachowanie klasy w trakcie kompilacji, w przeciwieństwie do dekoratorów, które rozszerzają klasy w czasie działania programu.
+Ponieważ w większości obiektowych języków programowania nie można tworzyć nowych klas podczas działania programu i zwykle nie można przewidzieć z góry wszystkich kombinacji rozszerzeń klas, konieczne by było stworzenie nowej klasy dla każdej kombinacji. Dekoratory są obiektami, tworzonymi w czasie działania programu, i mogą być łączone w różne kombinacje bezpośrednio przy użyciu. Przykładem wzorca dekoratora jest implementacja strumieni I/O w Javie.
+Rozważmy okno w graficznym interfejsie użytkownika. By pozwolić na przewijanie jego zawartości, należy dodać do niego poziome lub pionowe paski przewijania. Okna są reprezentowane przez instancje klasy Okno i klasa ta nie powinna posiadać żadnych metod dodających paski przewijania. Można utworzyć podklasę PrzewijaneOkno, która udostępniałaby te metody lub stworzyć OknoDekoratorPrzewijane, który jedynie dodawałby tą funkcjonalność do istniejących obiektów Okno. W tym miejscu działałyby oba rozwiązania.
+Teraz załóżmy, że potrzeba dodać ramki dookoła okien. I w tym przypadku klasa Okno nie ma takiej funkcjonalności. Pojawia się problem z podklasą OknoPrzewijane, bo aby dodać ramki do wszystkich okien potrzeba stworzyć podklasy OknoZRamką i OknoPrzewijaneZRamką. Problem staje się jeszcze większy z każdą kolejną opcją. W przypadku dekoratorów wystarczy stworzyć jedną klasę OknoDekoratorRamka - podczas działania programu można dynamicznie dekorować istniejące okna z OknoDekoratorPrzewijane lub OknoDekoratorRamka lub oboma.
 
-3)W bazie chcemy przechowywa� dane dotycz�ce w�a�ciciela oraz kawiarni kt�rymi dysponuje. (1 w�a�ciciel mo�e posiada� kilka kawiarni) 
-Zaprojektuj i zaimplementuj model logiczny takiego problemu, oraz stw�rz odpowiednie klasy s�u��ce do wykonywania operacji CRUD 
+3)W bazie chcemy przechowywa� dane dotycz�ce w�a�ciciela oraz kawiarni kt�rymi dysponuje. (1 w�a�ciciel mo�e posiada� kilka kawiarni) 
+Zaprojektuj i zaimplementuj model logiczny takiego problemu, oraz stw�rz odpowiednie klasy s�u��ce do wykonywania operacji CRUD 
 na bazie danych na serwerze HyperSQL.
 
 4)Zaimplementuj testy jednostkowe do napisanych klas.
